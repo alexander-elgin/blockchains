@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "concurrently -k \"tsc -w\" \"nodemon dist/index.js\"",
+    "lint": "eslint src --ext .ts",
     "test": "jest"
   },
   "keywords": [],
@@ -16,15 +17,21 @@
     "@babel/core": "^7.28.5",
     "@babel/preset-env": "^7.28.5",
     "@babel/preset-typescript": "^7.28.5",
+    "@eslint/js": "^9.39.2",
+    "@eslint/json": "^0.14.0",
     "@jest/globals": "^30.2.0",
     "@types/node": "^25.0.3",
     "babel-jest": "^30.2.0",
     "concurrently": "^9.2.1",
+    "eslint": "^9.39.2",
+    "globals": "^17.0.0",
     "jest": "^30.2.0",
+    "jiti": "^2.6.1",
     "nodemon": "^3.1.11",
     "ts-jest": "^29.4.6",
     "tsx": "^4.21.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.52.0"
   },
   "jest": {
     "testMatch": ["**/*.test.js"]

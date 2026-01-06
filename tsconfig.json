@@ -40,5 +40,11 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
-  }
+  },
+  "exclude": [
+    "eslint.config.ts"
+  ],
+  "include": [
+    "src/**/*.ts"
+  ]
 }
