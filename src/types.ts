@@ -1,9 +1,4 @@
-export type TronScanResponse = Array<Record<string, ExplorerRawResponseField>>;
-export type TronScanRawResponse = { balances: TronScanResponse };
-
-export type TronScanBalanceRecord = {
-    amount: string,
-};
+import type { TronScanBalanceRecord, TronScanRawResponse, TronScanResponse } from './balance/types.js';
 
 export type BalanceExplorerRecord = TronScanBalanceRecord;
 
