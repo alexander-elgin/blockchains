@@ -1,6 +1,6 @@
 import { beforeAll, describe, expect, it, } from '@jest/globals';
 
-import TronScanBalanceExplorer from './tron-scan.js';
+import TronScanBalanceExplorer from './tron-scan-explorer.js';
 
 describe('TronScanBalanceExplorer', () => {
     let baseUrl: string;
@@ -11,7 +11,7 @@ describe('TronScanBalanceExplorer', () => {
         explorer = new TronScanBalanceExplorer(baseUrl);
     });
 
-    describe('#getUrl', () => {
+    describe('.getUrl', () => {
         it('returns the endpoint full URL', () => {
             expect(explorer.getUrl()).toEqual(`${baseUrl}/accountv2`);
         });
