@@ -1,6 +1,6 @@
-import { BalanceExplorerGeneralClient } from './clients/balance.js';
+import { BalanceExplorerGeneralClient } from './clients/explorer/balance.js';
 
-import type { BalanceRawValue } from './abstract/types.js';
+import type { BalanceRawValue } from './abstract/explorer/types.js';
 
 export default class Blockchain {
     private readonly balanceClient: BalanceExplorerGeneralClient;

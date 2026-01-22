@@ -1,4 +1,4 @@
-import type { Tx } from '../../tx.js';
+import type { Tx } from '../../../tx.js';
 import type { BalanceExplorerResponse, TxListExplorerResponse } from '../types.js';
 
 export default abstract class TxParser {

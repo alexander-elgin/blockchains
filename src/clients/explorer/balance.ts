@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-import ExplorerClient from '../abstract/client.js';
+import ExplorerClient from '../../abstract/explorer/client.js';
 
-import type ExplorerRequestAdapter from '../abstract/request-adapter.js';
-import type BalanceExplorerResponseParser from '../abstract/response-parser/balance.js';
-import type { BalanceExplorerResponse, BalanceRawValue } from '../abstract/types.js';
+import type ExplorerRequestAdapter from '../../abstract/explorer/request-adapter.js';
+import type BalanceExplorerResponseParser from '../../abstract/explorer/response-parser/balance.js';
+import type { BalanceExplorerResponse, BalanceRawValue } from '../../abstract/explorer/types.js';
 
 export abstract class BalanceExplorerGeneralClient extends ExplorerClient {
     abstract getData(address: string): Promise<BalanceRawValue> | never;

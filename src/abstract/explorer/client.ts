@@ -1,4 +1,4 @@
-import { Tx } from '../tx.js';
+import { Tx } from '../../tx.js';
 
 import type { BalanceRawValue } from './types.js';
 
