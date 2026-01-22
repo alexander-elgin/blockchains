@@ -1,9 +1,8 @@
-import type { TronScanBalanceRecord, TronScanRawResponse, TronScanResponse } from './balance/types.js';
+import type { TronScanBalanceResponse } from './trx/balance/types.js';
 
-export type BalanceExplorerRecord = TronScanBalanceRecord;
-
-export type ExplorerResponse = TronScanResponse;
-export type ExplorerRawResponse = TronScanRawResponse;
-export type ExplorerRawResponseField = string | number;
+export type BalanceExplorerResponse = TronScanBalanceResponse;
+export type BalanceRawValue = string | undefined;
 
 export type ExplorerRequestDataField = string | number;
+
+export type TxListExplorerResponse = TronScanBalanceResponse;

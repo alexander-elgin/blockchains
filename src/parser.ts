@@ -1,14 +1,11 @@
 import type { Tx } from './tx.js';
-import type { BalanceExplorerRecord, ExplorerRawResponse, ExplorerResponse } from './types.js';
+import type { BalanceExplorerResponse, BalanceRawValue, TxListExplorerResponse } from './types.js';
 
-abstract class Parser {
-    abstract parseResponseWrapper(wrappedData: ExplorerRawResponse): ExplorerResponse;
+export abstract class BalanceParser {
+    abstract parse(responseRawData: BalanceExplorerResponse): BalanceRawValue;
 }
 
-export abstract class BalanceParser extends Parser {
-    abstract parseResponseItem(item: BalanceExplorerRecord): bigint;
-}
-
-export abstract class TxParser extends Parser {
-    abstract parseResponseItem(item: ExplorerRawResponse, digitsNumber: number): Tx;
+export abstract class TxParser {
+    abstract parseList(wrappedData: BalanceExplorerResponse): TxListExplorerResponse;
+    abstract parseItem(item: BalanceExplorerResponse, digitsNumber: number): Tx;
 }
