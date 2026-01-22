@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import ExplorerClient from '../abstract/client.js';
 
-import type Explorer from '../abstract/explorer.js';
+import type ExplorerRequestAdapter from '../abstract/request-adapter.js';
 import type { BalanceParser } from '../abstract/parser/balance.js';
 import type { BalanceExplorerResponse, BalanceRawValue } from '../abstract/types.js';
 
@@ -11,10 +11,10 @@ export abstract class BalanceExplorerGeneralClient extends ExplorerClient {
 }
 
 export class BalanceExplorerClient extends BalanceExplorerGeneralClient {
-    private readonly explorer: Explorer;
+    private readonly explorer: ExplorerRequestAdapter;
     private readonly parser: BalanceParser;
 
-    constructor(explorer: Explorer, parser: BalanceParser) {
+    constructor(explorer: ExplorerRequestAdapter, parser: BalanceParser) {
         super();
         this.explorer = explorer;
         this.parser = parser;

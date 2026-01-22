@@ -1,14 +1,14 @@
 import { beforeAll, describe, expect, it, } from '@jest/globals';
 
-import TronScanBalanceExplorer from './explorer.js';
+import TronScanBalanceExplorerRequestAdapter from './request-adapter.js';
 
-describe('TronScanBalanceExplorer', () => {
+describe('TronScanBalanceExplorerRequestAdapter', () => {
     let baseUrl: string;
-    let explorer: TronScanBalanceExplorer;
+    let explorer: TronScanBalanceExplorerRequestAdapter;
 
     beforeAll(() => {
         baseUrl = 'https://apilist.tronscan.org/api';
-        explorer = new TronScanBalanceExplorer(baseUrl);
+        explorer = new TronScanBalanceExplorerRequestAdapter(baseUrl);
     });
 
     describe('.getUrl', () => {

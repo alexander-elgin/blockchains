@@ -1,6 +1,6 @@
 import type { ExplorerRequestDataField } from './types.js';
 
-export default abstract class Explorer {
+export default abstract class ExplorerRequestAdapter {
     abstract getData(address?: string): Record<string, ExplorerRequestDataField>;
     protected abstract getUri(address?: string): string;
 

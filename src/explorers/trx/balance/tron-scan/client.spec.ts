@@ -1,15 +1,15 @@
 import { beforeAll, describe, expect, it, } from '@jest/globals';
 
 import { BalanceExplorerClient } from '../../../../clients/balance.js';
-import TronScanBalanceExplorer from './explorer.js';
+import TronScanBalanceExplorerRequestAdapter from './request-adapter.js';
 import TronScanBalanceParser from './parser.js';
 
 describe.skip('TronScan Balance Client', () => {
     let client: BalanceExplorerClient;
 
     beforeAll(() => {
-        client = new BalanceExplorerClient(new TronScanBalanceExplorer('https://apilist.tronscan.org/api'),
-            new TronScanBalanceParser());
+        client = new BalanceExplorerClient(new TronScanBalanceExplorerRequestAdapter(
+            'https://apilist.tronscan.org/api'), new TronScanBalanceParser());
     });
 
     describe('.getData', () => {

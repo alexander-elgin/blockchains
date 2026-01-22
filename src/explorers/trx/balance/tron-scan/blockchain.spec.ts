@@ -2,15 +2,15 @@ import { beforeAll, describe, expect, it, } from '@jest/globals';
 
 import Blockchain from '../../../../blockchain.js';
 import { BalanceExplorerClient } from '../../../../clients/balance.js';
-import TronScanBalanceExplorer from './explorer.js';
+import TronScanBalanceExplorerRequestAdapter from './request-adapter.js';
 import TronScanBalanceParser from './parser.js';
 
 describe.skip('TronScan Balance Blockchain', () => {
     let blockchain: Blockchain;
 
     beforeAll(() => {
-        blockchain = new Blockchain(new BalanceExplorerClient(
-            new TronScanBalanceExplorer('https://apilist.tronscan.org/api'), new TronScanBalanceParser()));
+        blockchain = new Blockchain(new BalanceExplorerClient(new TronScanBalanceExplorerRequestAdapter(
+            'https://apilist.tronscan.org/api'), new TronScanBalanceParser()));
     });
 
     describe('.getBalance', () => {
