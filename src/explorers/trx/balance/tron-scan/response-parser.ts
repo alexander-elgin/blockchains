@@ -1,7 +1,7 @@
-import { BalanceParser } from '../../../../abstract/parser/balance.js';
+import BalanceExplorerResponseParser from '../../../../abstract/response-parser/balance.js';
 import type { TronScanBalanceResponse } from './types.js';
 
-export default class TronScanBalanceExplorer extends BalanceParser {
+export default class TronScanBalanceExplorerResponseParser extends BalanceExplorerResponseParser {
     parse(data: TronScanBalanceResponse) {
         for (const balanceRecord of data.balances) {
             if (balanceRecord.address === undefined) {
