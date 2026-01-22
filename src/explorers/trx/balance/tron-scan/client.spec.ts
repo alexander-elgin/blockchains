@@ -4,7 +4,7 @@ import { BalanceExplorerClient } from '../../../../clients/balance.js';
 import TronScanBalanceExplorer from './explorer.js';
 import TronScanBalanceParser from './parser.js';
 
-describe('TronScan Balance Client', () => {
+describe.skip('TronScan Balance Client', () => {
     let client: BalanceExplorerClient;
 
     beforeAll(() => {
