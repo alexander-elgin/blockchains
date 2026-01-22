@@ -39,6 +39,7 @@
   },
   "jest": {
     "testMatch": [
+      "**/*.spec.js",
       "**/*.test.js"
     ]
   },
