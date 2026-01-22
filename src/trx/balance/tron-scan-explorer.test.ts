@@ -7,13 +7,13 @@ describe('TronScanBalanceExplorer', () => {
     let explorer: TronScanBalanceExplorer;
 
     beforeAll(() => {
-        baseUrl = 'https://apilist.tronscanapi.com/api';
+        baseUrl = 'https://apilist.tronscan.org/api';
         explorer = new TronScanBalanceExplorer(baseUrl);
     });
 
     describe('.getUrl', () => {
         it('returns the endpoint full URL', () => {
-            expect(explorer.getUrl()).toEqual(`${baseUrl}/accountv2`);
+            expect(explorer.getUrl()).toEqual(`${baseUrl}/account`);
         });
     });
 });

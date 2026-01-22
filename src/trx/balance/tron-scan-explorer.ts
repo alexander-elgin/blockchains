@@ -1,5 +1,5 @@
-import Explorer from '../explorer.js';
-import type { ExplorerRequestDataField } from '../types.js';
+import Explorer from '../../explorer.js';
+import type { ExplorerRequestDataField } from '../../types.js';
 
 export default class TronScanBalanceExplorer extends Explorer {
     getData(address: string): Record<string, ExplorerRequestDataField> {
@@ -7,6 +7,6 @@ export default class TronScanBalanceExplorer extends Explorer {
     }
 
     protected getUri(): string {
-        return '/accountv2';
+        return '/account';
     }
 }
