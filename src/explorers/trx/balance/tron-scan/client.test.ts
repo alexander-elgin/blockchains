@@ -1,8 +1,8 @@
 import { beforeAll, describe, expect, it, } from '@jest/globals';
 
-import { BalanceExplorerClient } from '../../../clients/balance.js';
-import TronScanBalanceExplorer from './tron-scan-explorer.js';
-import TronScanBalanceParser from './tron-scan-parser.js';
+import { BalanceExplorerClient } from '../../../../clients/balance.js';
+import TronScanBalanceExplorer from './explorer.js';
+import TronScanBalanceParser from './parser.js';
 
 describe('TronScan Balance Client', () => {
     let client: BalanceExplorerClient;

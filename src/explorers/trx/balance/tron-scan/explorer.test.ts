@@ -1,6 +1,6 @@
 import { beforeAll, describe, expect, it, } from '@jest/globals';
 
-import TronScanBalanceExplorer from './tron-scan-explorer.js';
+import TronScanBalanceExplorer from './explorer.js';
 
 describe('TronScanBalanceExplorer', () => {
     let baseUrl: string;

@@ -1,4 +1,4 @@
-import { BalanceParser } from '../../../abstract/parser/balance.js';
+import { BalanceParser } from '../../../../abstract/parser/balance.js';
 import type { TronScanBalanceResponse } from './types.js';
 
 export default class TronScanBalanceExplorer extends BalanceParser {
