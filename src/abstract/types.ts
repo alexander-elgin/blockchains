@@ -1,4 +1,4 @@
-import type { TronScanBalanceResponse } from './trx/balance/types.js';
+import type { TronScanBalanceResponse } from '../explorers/trx/balance/types.js';
 
 export type BalanceExplorerResponse = TronScanBalanceResponse;
 export type BalanceRawValue = string | undefined;
