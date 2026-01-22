@@ -1,6 +1,6 @@
 type TronScanBalanceRecord = {
     address?: string,
-    amount: string,
+    balance: string,
 };
 
 export type TronScanBalanceResponse = { balances: Array<TronScanBalanceRecord> };

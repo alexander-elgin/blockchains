@@ -5,7 +5,7 @@ export default class TronScanBalanceExplorer extends BalanceParser {
     parse(data: TronScanBalanceResponse) {
         for (const balanceRecord of data.balances) {
             if (balanceRecord.address === undefined) {
-                return balanceRecord.amount;
+                return balanceRecord.balance;
             }
         }
     }
