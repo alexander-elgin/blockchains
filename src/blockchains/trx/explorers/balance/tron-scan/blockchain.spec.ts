@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, it, } from '@jest/globals';
 
-import Blockchain from '../../../../blockchain.js';
-import { BalanceExplorerClient } from '../../../../clients/explorer/balance.js';
+import Blockchain from '../../../../../blockchain.js';
+import { BalanceExplorerClient } from '../../../../../clients/explorer/balance.js';
 import TronScanBalanceExplorerRequestAdapter from './request-adapter.js';
 import TronScanBalanceExplorerResponseParser from './response-parser.js';
 
