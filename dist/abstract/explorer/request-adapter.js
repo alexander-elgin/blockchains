@@ -6,8 +6,8 @@ export default class ExplorerRequestAdapter {
     getMethod() {
         return 'GET';
     }
-    getUrl(address) {
-        return `${this.baseUrl}${this.getUri(address)}`;
+    getUrl(address, contract) {
+        return `${this.baseUrl}${this.getUri(address, contract)}`;
     }
 }
 //# sourceMappingURL=request-adapter.js.map

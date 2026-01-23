@@ -1,7 +1,10 @@
-import type { Tx } from '../../../tx.js';
-import type { BalanceExplorerResponse, TxListExplorerResponse } from '../types.js';
-export default abstract class TxParser {
-    abstract parseList(wrappedData: BalanceExplorerResponse): TxListExplorerResponse;
-    abstract parseItem(item: BalanceExplorerResponse, digitsNumber: number): Tx;
+import type Tx from '../../../tx.js';
+import type { TxListExplorerResponse } from '../types.js';
+type TxRawData = Record<string, string | number>;
+export default abstract class TxListExplorerResponseParser {
+    abstract parseList(data: TxListExplorerResponse): Array<TxRawData>;
+    abstract parseItem(item: TxRawData): Tx;
+    parse(data: TxListExplorerResponse): Array<Tx>;
 }
+export {};
 //# sourceMappingURL=tx.d.ts.map

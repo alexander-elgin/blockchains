@@ -1,8 +1,10 @@
 import type { TronScanBalanceResponse } from '../../blockchains/trx/explorers/balance/tron-scan/types.js';
+import type { TronGridTokenTxListResponse } from '../../blockchains/trx/explorers/tx/tron-grid-token/types.js';
+import type { TronGridTxListResponse } from '../../blockchains/trx/explorers/tx/tron-grid/types.js';
 
 export type BalanceExplorerResponse = TronScanBalanceResponse;
 export type BalanceRawValue = string | undefined;
 
-export type ExplorerRequestDataField = string | number;
+export type ExplorerRequestDataField = boolean | number | string;
 
-export type TxListExplorerResponse = TronScanBalanceResponse;
+export type TxListExplorerResponse = TronGridTokenTxListResponse | TronGridTxListResponse;

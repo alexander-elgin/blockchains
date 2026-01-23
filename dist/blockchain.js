@@ -1,8 +1,10 @@
 import { toNumberByDecimals } from './utils/conversion.js';
 export default class Blockchain {
     balanceClient;
-    constructor(balanceClient) {
+    txClient;
+    constructor(balanceClient, txClient) {
         this.balanceClient = balanceClient;
+        this.txClient = txClient;
     }
     async getBalance(address) {
         return await this.balanceClient.getData(address);
@@ -13,6 +15,9 @@ export default class Blockchain {
     }
     async getRealBalance(address, decimalsNumber) {
         return toNumberByDecimals(await this.getBigIntBalance(address), decimalsNumber);
+    }
+    async getTxs(address) {
+        return await this.txClient.getData(address);
     }
 }
 //# sourceMappingURL=blockchain.js.map

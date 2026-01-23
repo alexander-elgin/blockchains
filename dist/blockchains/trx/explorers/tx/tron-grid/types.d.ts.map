@@ -1,0 +1,1 @@
+{"version":3,"file":"types.d.ts","sourceRoot":"","sources":["../../../../../../src/blockchains/trx/explorers/tx/tron-grid/types.ts"],"names":[],"mappings":"AAAA,MAAM,MAAM,gBAAgB,GAAG;IAC3B,eAAe,EAAE,MAAM,CAAC;IACxB,IAAI,EAAE,MAAM,CAAC;CAChB,CAAC;AAEF,MAAM,MAAM,sBAAsB,GAAG;IAAE,IAAI,EAAE,KAAK,CAAC,gBAAgB,CAAC,CAAA;CAAE,CAAC"}

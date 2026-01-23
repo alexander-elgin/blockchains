@@ -1,4 +1,3 @@
-import { Tx } from '../../tx.js';
 export default class ExplorerClient {
     isSupported() {
         return true;
