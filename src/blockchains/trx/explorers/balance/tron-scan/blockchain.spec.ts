@@ -11,7 +11,7 @@ describe.skip('TronScan Balance Blockchain', () => {
 
     beforeAll(() => {
         blockchain = new Blockchain(new BalanceExplorerClient(new TronScanBalanceExplorerRequestAdapter(
-            'https://apilist.tronscan.org/api'), new TronScanBalanceExplorerResponseParser()), 6);
+            'https://apilist.tronscan.org/api'), new TronScanBalanceExplorerResponseParser()));
     });
 
     describe('.getBalance', () => {
@@ -23,7 +23,7 @@ describe.skip('TronScan Balance Blockchain', () => {
 
     describe('.getRealBalance', () => {
         it('returns the account real (floating-point) balance', async () => {
-            const balance = await blockchain.getRealBalance(address);
+            const balance = await blockchain.getRealBalance(address, 6);
             expect(balance).toBeGreaterThan(33.11);
             expect(balance).toBeLessThan(33.12);
         });

@@ -1,6 +1,6 @@
 {
   "name": "@fair-wallet/blockchains",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A collections of blockchain adapters",
   "main": "index.js",
   "scripts": {
