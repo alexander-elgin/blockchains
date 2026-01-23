@@ -1,0 +1,1 @@
+{"version":3,"file":"response-parser.d.ts","sourceRoot":"","sources":["../../../../../../src/blockchains/trx/explorers/balance/tron-scan/response-parser.ts"],"names":[],"mappings":"AAAA,OAAO,6BAA6B,MAAM,6DAA6D,CAAC;AACxG,OAAO,KAAK,EAAE,uBAAuB,EAAE,MAAM,YAAY,CAAC;AAE1D,MAAM,CAAC,OAAO,OAAO,qCAAsC,SAAQ,6BAA6B;IAC5F,KAAK,CAAC,IAAI,EAAE,uBAAuB;CAOtC"}

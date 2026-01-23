@@ -1,0 +1,16 @@
+import { beforeAll, describe, expect, it, } from '@jest/globals';
+import TronScanBalanceExplorerRequestAdapter from './request-adapter.js';
+describe('TronScanBalanceExplorerRequestAdapter', () => {
+    let baseUrl;
+    let explorer;
+    beforeAll(() => {
+        baseUrl = 'https://apilist.tronscan.org/api';
+        explorer = new TronScanBalanceExplorerRequestAdapter(baseUrl);
+    });
+    describe('.getUrl', () => {
+        it('returns the endpoint full URL', () => {
+            expect(explorer.getUrl()).toEqual(`${baseUrl}/account`);
+        });
+    });
+});
+//# sourceMappingURL=request-adapter.test.js.map

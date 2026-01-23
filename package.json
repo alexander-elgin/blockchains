@@ -1,7 +1,7 @@
 {
-  "name": "explorers",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@fair-wallet/blockchains",
+  "version": "0.1.0",
+  "description": "A collections of blockchain adapters",
   "main": "index.js",
   "scripts": {
     "build": "rimraf dist/* && tsc",
@@ -11,7 +11,7 @@
     "test": "jest"
   },
   "keywords": [],
-  "author": "",
+  "author": "Alexander Elgin<sascha.elgin@gmail.com>",
   "license": "ISC",
   "private": true,
   "type": "module",
