@@ -5,10 +5,11 @@ import ExplorerClient from '../../abstract/explorer/client.js';
 import type ExplorerRequestAdapter from '../../abstract/explorer/request-adapter.js';
 import type TxExplorerResponseParser from '../../abstract/explorer/response-parser/tx.js';
 import type { TxListExplorerResponse } from '../../abstract/explorer/types.js';
+import type { ContractInfo } from '../../abstract/types.js';
 import type Tx from '../../tx.js';
 
 export abstract class TxListExplorerGeneralClient extends ExplorerClient {
-    abstract getData(address: string): Promise<Array<Tx>> | never;
+    abstract getData(address: string, contract?: ContractInfo): Promise<Array<Tx>> | never;
 }
 
 export class TxListExplorerClient extends TxListExplorerGeneralClient {
@@ -21,13 +22,13 @@ export class TxListExplorerClient extends TxListExplorerGeneralClient {
         this.parser = parser;
     }
 
-    async getData(address: string): Promise<Array<Tx>> {
+    async getData(address: string, contract?: ContractInfo): Promise<Array<Tx>> {
         const method = this.explorer.getMethod();
 
         const { data } = await axios({
-            url: this.explorer.getUrl(address),
+            url: this.explorer.getUrl(address, contract),
             method,
-            [method.toLowerCase() === 'get' ? 'params' : 'data']: this.explorer.getData(address),
+            [method.toLowerCase() === 'get' ? 'params' : 'data']: this.explorer.getData(address, contract),
         });
 
         return this.parser.parse(<TxListExplorerResponse>data);
