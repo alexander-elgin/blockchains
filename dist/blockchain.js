@@ -16,8 +16,8 @@ export default class Blockchain {
     async getRealBalance(address, decimalsNumber) {
         return toNumberByDecimals(await this.getBigIntBalance(address), decimalsNumber);
     }
-    async getTxs(address) {
-        return await this.txClient.getData(address);
+    async getTxs(address, contract) {
+        return await this.txClient.getData(address, contract);
     }
 }
 //# sourceMappingURL=blockchain.js.map

@@ -1,11 +1,11 @@
 export default class Tx {
-    amount: string;
+    amount: number | string;
     from: string;
     id: string;
     timestamp: Date;
     to: string;
     constructor({ amount, from, id, timestamp, to }: {
-        amount: string;
+        amount: number | string;
         from: string;
         id: string;
         timestamp: Date;

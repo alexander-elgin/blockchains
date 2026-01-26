@@ -10,12 +10,12 @@ export class TxListExplorerClient extends TxListExplorerGeneralClient {
         this.explorer = explorer;
         this.parser = parser;
     }
-    async getData(address) {
+    async getData(address, contract) {
         const method = this.explorer.getMethod();
         const { data } = await axios({
-            url: this.explorer.getUrl(address),
+            url: this.explorer.getUrl(address, contract),
             method,
-            [method.toLowerCase() === 'get' ? 'params' : 'data']: this.explorer.getData(address),
+            [method.toLowerCase() === 'get' ? 'params' : 'data']: this.explorer.getData(address, contract),
         });
         return this.parser.parse(data);
     }
