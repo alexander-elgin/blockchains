@@ -1,5 +1,5 @@
 import { beforeAll, describe, expect, it, } from '@jest/globals';
-import { BalanceExplorerClient } from '../../../../../clients/explorer/balance.js';
+import BalanceExplorerClient from '../../../../../clients/explorer/balance.js';
 import TronScanBalanceExplorerRequestAdapter from './request-adapter.js';
 import TronScanBalanceExplorerResponseParser from './response-parser.js';
 describe.skip('TronScan Balance Client', () => {

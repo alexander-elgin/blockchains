@@ -1,4 +1,4 @@
-export default class ExplorerClient {
+export default class BlockchainClient {
     isSupported() {
         return true;
     }

@@ -1,28 +1,13 @@
-import axios from 'axios';
-import ExplorerClient from '../../abstract/explorer/client.js';
-export class TxListExplorerGeneralClient extends ExplorerClient {
-}
-export class TxListExplorerClient extends TxListExplorerGeneralClient {
-    explorer;
+import ExplorerClient from './general.js';
+export default class TxListExplorerClient extends ExplorerClient {
     parser;
     constructor(explorer, parser) {
-        super();
-        this.explorer = explorer;
+        super(explorer);
         this.parser = parser;
     }
     async getData(address, contract) {
-        const method = this.explorer.getMethod();
-        const { data } = await axios({
-            url: this.explorer.getUrl(address, contract),
-            method,
-            [method.toLowerCase() === 'get' ? 'params' : 'data']: this.explorer.getData(address, contract),
-        });
+        const { data } = await this.fetch(address, contract);
         return this.parser.parse(data);
-    }
-}
-export class TxListExplorerNullClient extends TxListExplorerGeneralClient {
-    getData() {
-        throw new Error('The method is not supported');
     }
 }
 //# sourceMappingURL=tx.js.map

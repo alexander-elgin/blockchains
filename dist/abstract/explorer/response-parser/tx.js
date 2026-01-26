@@ -1,4 +1,5 @@
-export default class TxListExplorerResponseParser {
+import ExplorerResponseParser from './general.js';
+export default class TxListExplorerResponseParser extends ExplorerResponseParser {
     parse(data) {
         return this.parseList(data).map(this.parseItem);
     }

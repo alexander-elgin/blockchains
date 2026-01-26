@@ -1,0 +1,1 @@
+{"version":3,"file":"null.d.ts","sourceRoot":"","sources":["../../src/clients/null.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,aAAa,EAAE,YAAY,EAAE,MAAM,YAAY,CAAC;AAE9D,MAAM,CAAC,OAAO,OAAO,oBAAqB,YAAW,aAAa,EAAE,YAAY;IAC5E,OAAO,IAAI,KAAK;CAGnB"}
