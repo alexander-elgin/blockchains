@@ -5,6 +5,9 @@ export {
     default as TronScanBalanceExplorerResponseParser,
 } from './blockchains/trx/explorers/balance/tron-scan/response-parser.js';
 export {
+    default as TronScanTokenBalanceExplorerResponseParser,
+} from './blockchains/trx/explorers/balance/tron-scan-token/response-parser.js';
+export {
     default as TronGridTxListExplorerRequestAdapter,
 } from './blockchains/trx/explorers/tx/tron-grid/request-adapter.js';
 export {
