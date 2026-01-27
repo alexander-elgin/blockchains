@@ -1,9 +1,5 @@
-type TronScanBalanceRecord = {
-    address?: string;
-    balance: string;
-};
+import type { TronScanBalanceRecord } from '../types.js';
 export type TronScanBalanceResponse = {
     balances: Array<TronScanBalanceRecord>;
 };
-export {};
 //# sourceMappingURL=types.d.ts.map

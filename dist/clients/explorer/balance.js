@@ -5,9 +5,9 @@ export default class BalanceExplorerClient extends ExplorerClient {
         super(explorer);
         this.parser = parser;
     }
-    async getData(address) {
-        const { data } = await this.fetch(address);
-        return this.parser.parse(data);
+    async getData(address, contract) {
+        const { data } = await this.fetch(address, contract);
+        return this.parser.parse(data, contract);
     }
 }
 //# sourceMappingURL=balance.js.map
