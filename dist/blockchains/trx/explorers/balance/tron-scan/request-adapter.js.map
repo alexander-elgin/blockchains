@@ -1,1 +1,0 @@
-{"version":3,"file":"request-adapter.js","sourceRoot":"","sources":["../../../../../../src/blockchains/trx/explorers/balance/tron-scan/request-adapter.ts"],"names":[],"mappings":"AAAA,OAAO,sBAAsB,MAAM,qDAAqD,CAAC;AAGzF,MAAM,CAAC,OAAO,OAAO,uBAAwB,SAAQ,sBAAsB;IACvE,OAAO,CAAC,OAAe;QACnB,OAAO,EAAE,OAAO,EAAE,CAAA;IACtB,CAAC;IAES,MAAM;QACZ,OAAO,UAAU,CAAC;IACtB,CAAC;CACJ"}

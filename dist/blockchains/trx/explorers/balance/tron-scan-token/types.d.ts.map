@@ -1,1 +1,0 @@
-{"version":3,"file":"types.d.ts","sourceRoot":"","sources":["../../../../../../src/blockchains/trx/explorers/balance/tron-scan-token/types.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,qBAAqB,EAAE,MAAM,aAAa,CAAC;AAEzD,MAAM,MAAM,4BAA4B,GAAG;IAAE,MAAM,EAAE,KAAK,CAAC,qBAAqB,CAAC,CAAA;CAAE,CAAC"}
