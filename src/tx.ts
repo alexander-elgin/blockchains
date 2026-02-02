@@ -5,7 +5,13 @@ export default class Tx {
     timestamp: Date;
     to: string;
 
-    constructor({ amount, from, id, timestamp, to }: { amount: number | string, from: string, id?: string, timestamp: Date, to: string, }) {
+    constructor({ amount, from, id, timestamp, to }: {
+        amount: number | string,
+        from: string,
+        id?: string,
+        timestamp: Date,
+        to: string,
+    }) {
         this.amount = amount;
         this.from = from;
         this.id = id;
