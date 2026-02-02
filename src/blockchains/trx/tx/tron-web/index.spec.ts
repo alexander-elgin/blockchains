@@ -1,6 +1,6 @@
 import { beforeAll, describe, expect, it } from '@jest/globals';
 
-import Tx from '../../../tx.js';
+import Tx from '../../../../tx.js';
 import TronTxHandler from './index.js';
 
 describe.skip('TronTxHandler', () => {

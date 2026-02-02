@@ -1,6 +1,6 @@
 import { TronWeb } from 'tronweb';
 
-import Tx from '../../../tx.js';
+import Tx from '../../../../tx.js';
 
 export default class TronTxHandler {
   private readonly tronWeb: TronWeb;

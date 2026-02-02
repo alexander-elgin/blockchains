@@ -1,8 +1,8 @@
 import { TronWeb } from 'tronweb';
 
-import Tx from '../../../tx.js';
+import Tx from '../../../../tx.js';
 
-import type { ContractInfo } from '../../../abstract/types.js';
+import type { ContractInfo } from '../../../../abstract/types.js';
 
 export default class TronTxHandler {
   private readonly tronWeb: TronWeb;
