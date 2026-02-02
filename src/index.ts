@@ -25,8 +25,8 @@ export {
     getAddress as getTronAddress,
 } from './blockchains/trx/keys/tron-web/index.js';
 
-export { default as TronTxHandler } from './blockchains/trx/tx/tron-web/index.js';
-export { default as TronTokenTxHandler } from './blockchains/trx/tx/tron-web/token.js';
+export { default as TronTxHandler } from './blockchains/trx/tx-creator/index.js';
+export { default as TronTokenTxHandler } from './blockchains/trx/token-tx-creator/index.js';
 
 export { getSignTxUrl as getSignTronTxUrl } from './blockchains/trx/utils/index.js';
 

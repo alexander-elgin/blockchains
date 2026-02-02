@@ -1,16 +1,13 @@
-import { TronWeb } from 'tronweb';
+import type { TronWeb } from 'tronweb';
 
-import type Tx from '../../../../tx.js';
+import type { ContractInfo } from '../../../abstract/types.js';
+import type Tx from '../../../tx.js';
 
-import type { ContractInfo } from '../../../../abstract/types.js';
+export default class TronTokenTxCreator {
+  private readonly network: TronWeb;
 
-export default class TronTxHandler {
-  private readonly tronWeb: TronWeb;
-
-  constructor(explorerUrl: string) {
-    this.tronWeb = new TronWeb({
-      fullHost: explorerUrl,
-    });
+  constructor(network: TronWeb) {
+    this.network = network;
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -19,7 +16,7 @@ export default class TronTxHandler {
       throw new Error('TRC20 "from" address is not set');
     }
 
-    const result = await this.tronWeb.transactionBuilder.triggerSmartContract(
+    const result = await this.network.transactionBuilder.triggerSmartContract(
         contractInfo.address,
         'transfer(address,uint256)',
         {
