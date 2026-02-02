@@ -23,6 +23,7 @@ export {
 export { default as TronTxHandler } from './blockchains/trx/tx-creator/index.js';
 export { default as TronTokenTxHandler } from './blockchains/trx/token-tx-creator/index.js';
 
+export { default as TrxBlockchain } from './blockchains/trx/index.js';
 export * as TrxUtils from './blockchains/trx/utils/index.js';
 
 export { default as BalanceExplorerClient } from './clients/explorer/balance.js';
