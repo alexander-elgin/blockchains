@@ -16,7 +16,7 @@ function getDerivedKey(mnemonic: string) {
 
     const seed = bip39.mnemonicToSeedSync(mnemonic);
     const root = bip32.fromSeed(seed);
-    const path = 'm/44\'/195\'/0\'';
+    const path = "m/44'/195'/0'/0/0";
 
     return root.derivePath(path);
 }
