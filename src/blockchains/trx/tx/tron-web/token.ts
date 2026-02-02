@@ -1,6 +1,6 @@
 import { TronWeb } from 'tronweb';
 
-import Tx from '../../../../tx.js';
+import type Tx from '../../../../tx.js';
 
 import type { ContractInfo } from '../../../../abstract/types.js';
 

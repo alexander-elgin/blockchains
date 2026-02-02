@@ -9,7 +9,7 @@ export default class TronGridTokenTxListExplorerRequestAdapter extends ExplorerR
         };
     }
     getUri(address, contract) {
-        return `/accounts/${address}/transactions/${contract.type}`;
+        return `/v1/accounts/${address}/transactions/${contract.type}`;
     }
 }
 //# sourceMappingURL=request-adapter.js.map

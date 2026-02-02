@@ -7,7 +7,7 @@ import TronGridTokenTxListExplorerResponseParser from './response-parser.js';
 describe.skip('TronGrid Tx List Token Blockchain', () => {
     let blockchain;
     beforeAll(() => {
-        blockchain = new Blockchain(new NullBlockchainClient(), new TxListExplorerClient(new TronGridTokenTxListExplorerRequestAdapter('https://api.trongrid.io/v1'), new TronGridTokenTxListExplorerResponseParser()));
+        blockchain = new Blockchain(new NullBlockchainClient(), new TxListExplorerClient(new TronGridTokenTxListExplorerRequestAdapter('https://api.trongrid.io'), new TronGridTokenTxListExplorerResponseParser()));
     });
     describe('.getTxs', () => {
         it('returns the account txs', async () => {
