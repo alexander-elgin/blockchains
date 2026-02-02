@@ -14,6 +14,6 @@ export default class TronGridTokenTxListExplorerRequestAdapter extends ExplorerR
     }
 
     protected getUri(address: string, contract: ContractInfo): string {
-        return `/accounts/${address}/transactions/${contract.type}`;
+        return `/v1/accounts/${address}/transactions/${contract.type}`;
     }
 }

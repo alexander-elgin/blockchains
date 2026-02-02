@@ -11,7 +11,7 @@ describe.skip('TronGrid Tx List Token Blockchain', () => {
 
     beforeAll(() => {
         blockchain = new Blockchain(new NullBlockchainClient(), new TxListExplorerClient(
-            new TronGridTokenTxListExplorerRequestAdapter('https://api.trongrid.io/v1'),
+            new TronGridTokenTxListExplorerRequestAdapter('https://api.trongrid.io'),
             new TronGridTokenTxListExplorerResponseParser()));
     });
 

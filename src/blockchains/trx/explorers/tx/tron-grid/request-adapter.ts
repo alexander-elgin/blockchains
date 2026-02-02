@@ -8,6 +8,6 @@ export default class TronGridTxListExplorerRequestAdapter extends ExplorerReques
     }
 
     protected getUri(address: string): string {
-        return `/accounts/${address}/transactions`;
+        return `/v1/accounts/${address}/transactions`;
     }
 }
