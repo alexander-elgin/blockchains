@@ -1,5 +1,7 @@
 import { Buffer } from 'buffer';
 
+export { getAddress, getPrivateKey } from './keys/index.js';
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function getSignTxUrl(unsignedTx: Record<string, any>, callbackUrl = ''): string {
     const txBase64 = Buffer.from(JSON.stringify(unsignedTx)).toString('base64');

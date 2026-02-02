@@ -20,15 +20,10 @@ export {
     default as TronGridTokenTxListExplorerResponseParser,
 } from './blockchains/trx/explorers/tx/tron-grid-token/response-parser.js';
 
-export {
-    getPrivateKey as getTronPrivateKey,
-    getAddress as getTronAddress,
-} from './blockchains/trx/keys/tron-web/index.js';
-
 export { default as TronTxHandler } from './blockchains/trx/tx-creator/index.js';
 export { default as TronTokenTxHandler } from './blockchains/trx/token-tx-creator/index.js';
 
-export { getSignTxUrl as getSignTronTxUrl } from './blockchains/trx/utils/index.js';
+export * as TrxUtils from './blockchains/trx/utils/index.js';
 
 export { default as BalanceExplorerClient } from './clients/explorer/balance.js';
 export { default as TxListExplorerClient } from './clients/explorer/tx.js';
