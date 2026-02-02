@@ -1,8 +1,7 @@
 import { Buffer } from 'buffer';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function getSignTxUrl(unsignedTx: Record<string, any>, memo = '', callbackUrl = ''): string {
-    unsignedTx.memo = memo;
+export function getSignTxUrl(unsignedTx: Record<string, any>, callbackUrl = ''): string {
     const txBase64 = Buffer.from(JSON.stringify(unsignedTx)).toString('base64');
     return `tronlink://sign?data=${encodeURIComponent(txBase64)}&callback=${encodeURIComponent(callbackUrl)}`;
 }
