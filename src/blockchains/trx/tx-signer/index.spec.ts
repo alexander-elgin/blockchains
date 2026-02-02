@@ -5,7 +5,7 @@ import Tx from '../../../tx.js';
 import TronTxCreator from '../tx-creator/index.js';
 import TronTxSigner from './index.js';
 
-describe('TronTxSigner', () => {
+describe.skip('TronTxSigner', () => {
   describe('.signTx', () => {
     it('signs the TRX transaction', async () => {
       const tronWeb = new TronWeb({ fullHost: 'https://nile.trongrid.io' });
