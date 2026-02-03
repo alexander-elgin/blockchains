@@ -4,6 +4,7 @@ import type { ContractInfo } from './types.js';
 export default interface Blockchain {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     createTx(tx: Tx, contractInfo?: ContractInfo): Promise<any>;
+    isAddressActive(address: string): Promise<boolean>;
     isAddressValid(address: string): boolean;
     isTxAccepted(txId: string, contract?: ContractInfo): Promise<boolean>;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

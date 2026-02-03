@@ -12,3 +12,8 @@ export function getSignTxUrl(unsignedTx: Record<string, any>, callbackUrl = ''):
 export function isAddressValid(address: string): boolean {
     return TronWeb.isAddress(address);
 }
+
+export async function isAddressActive(tronWeb: TronWeb, address: string): Promise<boolean> {
+    const account = await tronWeb.trx.getAccount(address);
+    return Object.keys(account).length > 0;
+}
