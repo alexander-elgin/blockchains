@@ -1,6 +1,6 @@
 import { beforeAll, describe, expect, it, } from '@jest/globals';
 
-import TxListExplorerClient from '../../../../../clients/explorer/tx.js';
+import TxListExplorerClient from '../../../abstract/tx-list-explorer-client.js';
 import TronGridTokenTxListExplorerRequestAdapter from './request-adapter.js';
 import TronGridTokenTxListExplorerResponseParser from './response-parser.js';
 

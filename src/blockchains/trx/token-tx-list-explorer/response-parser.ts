@@ -1,5 +1,5 @@
-import Tx from '../../../../../tx.js';
-import TxListExplorerResponseParser from '../../../../../abstract/explorer/response-parser/tx.js';
+import Tx from '../../../tx.js';
+import TxListExplorerResponseParser from '../../../abstract/explorer/tx-list-response-parser.js';
 
 import type { TronGridTokenTxListResponse, TronGridTokenTxRecord } from './types.js';
 

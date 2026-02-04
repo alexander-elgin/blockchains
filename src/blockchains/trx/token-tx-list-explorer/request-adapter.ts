@@ -1,6 +1,6 @@
-import ExplorerRequestAdapter from '../../../../../abstract/explorer/request-adapter.js';
+import ExplorerRequestAdapter from '../../../abstract/explorer/request-adapter.js';
 
-import type { ContractInfo } from '../../../../../abstract/types.js';
+import type { ContractInfo } from '../../../abstract/types.js';
 
 const MAX_ALLOWED_TXS_NUMBER_PER_REQUEST = 200;
 
