@@ -9,6 +9,10 @@ export interface AddressValidator {
     isAddressActive(address: string): Promise<boolean>;
     isAddressValid(address: string): Promise<boolean>;
 }
+export interface KeysGenerator {
+    getAddress(mnemonicPhrase: string): string;
+    getPrivateKey(mnemonicPhrase: string): string;
+}
 export interface TokenTxCreator {
     createTokenTx(tx: Tx, contract: ContractInfo): Promise<any>;
 }

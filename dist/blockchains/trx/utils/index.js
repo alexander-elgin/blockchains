@@ -1,6 +1,7 @@
 import { Buffer } from 'buffer';
 import { TronWeb } from 'tronweb';
-export { getAddress, getPrivateKey } from './keys/index.js';
+export * from './keys/index.js';
+export * from './tx/index.js';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function getSignTxUrl(unsignedTx, callbackUrl = '') {
     const txBase64 = Buffer.from(JSON.stringify(unsignedTx)).toString('base64');
