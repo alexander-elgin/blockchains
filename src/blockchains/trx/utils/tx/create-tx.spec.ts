@@ -1,8 +1,8 @@
 import { describe, expect, it } from '@jest/globals';
 import { TronWeb } from 'tronweb';
 
-import Tx from '../../../tx.js';
-import createTx from './create-tx.js';
+import Tx from '../../../../tx.js';
+import { createTx } from './index.js';
 
 describe.skip('TronTxCreator', () => {
   describe('.createTx', () => {

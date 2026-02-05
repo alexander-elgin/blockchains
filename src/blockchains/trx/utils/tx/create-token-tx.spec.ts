@@ -1,8 +1,8 @@
 import {describe, expect, it} from '@jest/globals';
 import {TronWeb} from 'tronweb';
 
-import Tx from '../../../tx.js';
-import createTokenTx from './create-token-tx.js';
+import Tx from '../../../../tx.js';
+import { createTokenTx } from './index.js';
 
 describe.skip('.createTokenTx', () => {
     it('sends the unsigned TRC20 transaction', async () => {

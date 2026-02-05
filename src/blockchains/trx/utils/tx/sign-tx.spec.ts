@@ -1,9 +1,8 @@
 import {describe, expect, it} from '@jest/globals';
 import {TronWeb} from 'tronweb';
 
-import Tx from '../../../tx.js';
-import createTx from './create-tx.js';
-import signTx from './sign-tx.js';
+import Tx from '../../../../tx.js';
+import { createTx, signTx } from './index.js';
 
 describe.skip('.signTx', () => {
     it('signs the TRX transaction', async () => {

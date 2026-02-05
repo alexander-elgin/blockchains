@@ -1,7 +1,8 @@
 import { Buffer } from 'buffer';
 import { TronWeb } from 'tronweb';
 
-export { getAddress, getPrivateKey } from './keys/index.js';
+export * from './keys/index.js';
+export * from './tx/index.js';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function getSignTxUrl(unsignedTx: Record<string, any>, callbackUrl = ''): string {
