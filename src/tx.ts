@@ -1,7 +1,7 @@
 export default class Tx {
     amount: number | string;
     from: string;
-    id: string | undefined;
+    id: string;
     timestamp: Date;
     to: string;
 
@@ -9,13 +9,13 @@ export default class Tx {
         amount: number | string,
         from: string,
         id?: string,
-        timestamp: Date,
+        timestamp?: Date,
         to: string,
     }) {
         this.amount = amount;
         this.from = from;
-        this.id = id;
-        this.timestamp = timestamp;
+        this.id = id ?? '';
+        this.timestamp = timestamp ?? new Date();
         this.to = to;
     }
 }
