@@ -21,3 +21,7 @@ export default abstract class Blockchain {
         return getMatchedTxs(ignored, targetTx, await this.txListClient.getData(targetTx.from, contract));
     }
 }
+
+export interface TxRouter {
+    getCreateTokenTxUrl(tx: Tx, contract: ContractInfo): Promise<string>;
+}

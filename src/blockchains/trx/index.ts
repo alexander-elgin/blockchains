@@ -7,12 +7,13 @@ import TronGridTokenTxListExplorerResponseParser from './token-tx-list-explorer/
 import TronTokenTxCreator from './token-tx-creator/index.js';
 import TronTxCreator from './tx-creator/index.js';
 import TronTxSigner from './tx-signer/index.js';
-import { isAddressActive, isAddressValid } from './utils/index.js';
+import { getSignTxUrl, isAddressActive, isAddressValid } from './utils/index.js';
 
+import type { TxRouter } from '../../abstract/blockchain.js';
 import type { ContractInfo } from '../../abstract/types.js';
 import type Tx from '../../tx.js';
 
-export default class TrxBlockchain extends Blockchain {
+export default class TrxBlockchain extends Blockchain implements TxRouter {
     private readonly network: TronWeb;
     private readonly tokenTxCreator: TronTokenTxCreator;
     private readonly txCreator: TronTxCreator;
@@ -30,6 +31,10 @@ export default class TrxBlockchain extends Blockchain {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     async createTx(tx: Tx, contract?: ContractInfo): Promise<any> {
         return await (contract === undefined ? this.txCreator.createTx(tx) : this.tokenTxCreator.createTx(tx, contract));
+    }
+
+    async getCreateTokenTxUrl(tx: Tx, contract: ContractInfo, callbackUrl = ''): Promise<string> {
+        return getSignTxUrl(await this.createTx(tx, contract), callbackUrl)
     }
 
     async isAddressActive(address: string): Promise<boolean> {
