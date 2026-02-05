@@ -7,8 +7,8 @@ export default class Tx {
     constructor({ amount, from, id, timestamp, to }) {
         this.amount = amount;
         this.from = from;
-        this.id = id;
-        this.timestamp = timestamp;
+        this.id = id ?? '';
+        this.timestamp = timestamp ?? new Date();
         this.to = to;
     }
 }

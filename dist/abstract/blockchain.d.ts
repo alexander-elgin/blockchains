@@ -1,10 +1,24 @@
 import type Tx from '../tx.js';
-import type { ContractInfo } from './types.js';
-export default interface Blockchain {
-    createTx(tx: Tx, contractInfo?: ContractInfo): Promise<any>;
+import type { BlockchainClient, ContractInfo } from './types.js';
+export default abstract class Blockchain {
+    protected readonly txListClient: BlockchainClient;
+    protected constructor(txListClient: BlockchainClient);
+    getMatchedTxs(ignored: Array<string>, targetTx: Tx, contract: ContractInfo): Promise<Array<Tx>>;
+}
+export interface AddressValidator {
     isAddressActive(address: string): Promise<boolean>;
-    isAddressValid(address: string): boolean;
-    isTxAccepted(txId: string, contract?: ContractInfo): Promise<boolean>;
-    signTx(unsignedTransaction: any, privateKey: string): Promise<any>;
+    isAddressValid(address: string): Promise<boolean>;
+}
+export interface TokenTxCreator {
+    createTokenTx(tx: Tx, contract: ContractInfo): Promise<any>;
+}
+export interface TxCreator {
+    createTx(tx: Tx): Promise<any>;
+}
+export interface TxSigner {
+    signTx(unsignedTx: any, privateKey: string): Promise<any>;
+}
+export interface TxRouter {
+    getCreateTokenTxUrl(tx: Tx, contract: ContractInfo): Promise<string>;
 }
 //# sourceMappingURL=blockchain.d.ts.map
