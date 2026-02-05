@@ -5,7 +5,7 @@ import TxListExplorerClient from '../../abstract/tx-list-explorer-client.js';
 import TronGridTokenTxListExplorerRequestAdapter from './token-tx-list-explorer/request-adapter.js';
 import TronGridTokenTxListExplorerResponseParser from './token-tx-list-explorer/response-parser.js';
 import createTokenTx from './utils/create-token-tx.js';
-import TronTxCreator from './tx-creator/index.js';
+import createTx from './utils/create-tx.js';
 import TronTxSigner from './tx-signer/index.js';
 import { getSignTxUrl, isAddressActive, isAddressValid } from './utils/index.js';
 
@@ -21,14 +21,12 @@ export default class TrxBlockchain extends Blockchain implements
     TxSigner
 {
     private readonly network: TronWeb;
-    private readonly txCreator: TronTxCreator;
     private readonly signer: TronTxSigner;
 
     constructor(explorerUrl: string) {
         super(new TxListExplorerClient(new TronGridTokenTxListExplorerRequestAdapter(explorerUrl),
             new TronGridTokenTxListExplorerResponseParser()));
         this.network = new TronWeb({ fullHost: explorerUrl });
-        this.txCreator = new TronTxCreator(this.network);
         this.signer = new TronTxSigner(this.network);
     }
 
@@ -39,7 +37,7 @@ export default class TrxBlockchain extends Blockchain implements
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     async createTx(tx: Tx): Promise<any> {
-        return await this.txCreator.createTx(tx);
+        return await createTx(this.network, tx);
     }
 
     async getCreateTokenTxUrl(tx: Tx, contract: ContractInfo, callbackUrl = ''): Promise<string> {
