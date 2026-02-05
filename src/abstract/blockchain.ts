@@ -20,6 +20,11 @@ export interface AddressValidator {
     isAddressValid(address: string): Promise<boolean>;
 }
 
+export interface KeysGenerator {
+    getAddress(mnemonicPhrase: string): string;
+    getPrivateKey(mnemonicPhrase: string): string;
+}
+
 export interface TokenTxCreator {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     createTokenTx(tx: Tx, contract: ContractInfo): Promise<any>;
