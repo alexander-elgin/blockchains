@@ -9,11 +9,17 @@ import TronTxCreator from './tx-creator/index.js';
 import TronTxSigner from './tx-signer/index.js';
 import { getSignTxUrl, isAddressActive, isAddressValid } from './utils/index.js';
 
-import type { TxRouter } from '../../abstract/blockchain.js';
+import type { AddressValidator, TokenTxCreator, TxCreator, TxRouter, TxSigner } from '../../abstract/blockchain.js';
 import type { ContractInfo } from '../../abstract/types.js';
 import type Tx from '../../tx.js';
 
-export default class TrxBlockchain extends Blockchain implements TxRouter {
+export default class TrxBlockchain extends Blockchain implements
+    AddressValidator,
+    TokenTxCreator,
+    TxCreator,
+    TxRouter,
+    TxSigner
+{
     private readonly network: TronWeb;
     private readonly tokenTxCreator: TronTokenTxCreator;
     private readonly txCreator: TronTxCreator;
@@ -29,20 +35,25 @@ export default class TrxBlockchain extends Blockchain implements TxRouter {
     }
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    async createTx(tx: Tx, contract?: ContractInfo): Promise<any> {
-        return await (contract === undefined ? this.txCreator.createTx(tx) : this.tokenTxCreator.createTx(tx, contract));
+    async createTokenTx(tx: Tx, contract: ContractInfo): Promise<any> {
+        return await this.tokenTxCreator.createTx(tx, contract);
+    }
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    async createTx(tx: Tx): Promise<any> {
+        return await this.txCreator.createTx(tx);
     }
 
     async getCreateTokenTxUrl(tx: Tx, contract: ContractInfo, callbackUrl = ''): Promise<string> {
-        return getSignTxUrl(await this.createTx(tx, contract), callbackUrl)
+        return getSignTxUrl(await this.createTokenTx(tx, contract), callbackUrl)
     }
 
     async isAddressActive(address: string): Promise<boolean> {
         return await isAddressActive(this.network, address);
     }
 
-    isAddressValid(address: string): boolean {
-        return isAddressValid(address);
+    async isAddressValid(address: string): Promise<boolean> {
+        return await isAddressValid(address);
     }
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
