@@ -1,11 +1,12 @@
 import * as bip39 from "bip39";
 import { BIP32Factory } from "bip32";
 import * as ecc from "tiny-secp256k1";
-import { ec as EC } from "elliptic";
+import elliptic from "elliptic";
 import keccak from "keccak";
 import bs58check from "bs58check";
 import { Buffer } from 'buffer';
 
+const { ec: EC } = elliptic;
 const bip32 = BIP32Factory(ecc);
 const ec = new EC("secp256k1");
 
