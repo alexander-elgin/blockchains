@@ -9,7 +9,7 @@ export default class TrxBlockchain extends Blockchain implements AddressValidato
     createTx(tx: Tx): Promise<any>;
     getCreateTokenTxUrl(tx: Tx, contract: ContractInfo, callbackUrl?: string): Promise<string>;
     isAddressActive(address: string): Promise<boolean>;
-    isAddressValid(address: string): Promise<boolean>;
+    isAddressValid(address: string): boolean;
     signTx(unsignedTx: any, privateKey: string): Promise<any>;
 }
 //# sourceMappingURL=index.d.ts.map

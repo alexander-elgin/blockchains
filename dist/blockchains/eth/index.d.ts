@@ -6,6 +6,6 @@ export default class EthBlockchain extends Blockchain implements AddressValidato
     constructor(explorerUrl: string, apiKey: string);
     getCreateTokenTxUrl(tx: Tx, contract: ContractInfo): Promise<string>;
     isAddressActive(): Promise<boolean>;
-    isAddressValid(address: string): Promise<boolean>;
+    isAddressValid(address: string): boolean;
 }
 //# sourceMappingURL=index.d.ts.map

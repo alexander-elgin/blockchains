@@ -13,8 +13,8 @@ export default class EthBlockchain extends Blockchain {
     async isAddressActive() {
         return true;
     }
-    async isAddressValid(address) {
-        return await isAddressValid(address);
+    isAddressValid(address) {
+        return isAddressValid(address);
     }
 }
 //# sourceMappingURL=index.js.map

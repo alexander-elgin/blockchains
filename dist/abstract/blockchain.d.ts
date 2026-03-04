@@ -7,7 +7,7 @@ export default abstract class Blockchain {
 }
 export interface AddressValidator {
     isAddressActive(address: string): Promise<boolean>;
-    isAddressValid(address: string): Promise<boolean>;
+    isAddressValid(address: string): boolean;
 }
 export interface KeysGenerator {
     getAddress(mnemonicPhrase: string): string;

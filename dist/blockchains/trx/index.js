@@ -24,8 +24,8 @@ export default class TrxBlockchain extends Blockchain {
     async isAddressActive(address) {
         return await isAddressActive(this.network, address);
     }
-    async isAddressValid(address) {
-        return await isAddressValid(address);
+    isAddressValid(address) {
+        return isAddressValid(address);
     }
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     async signTx(unsignedTx, privateKey) {
