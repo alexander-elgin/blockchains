@@ -22,7 +22,7 @@ export default class EthBlockchain extends Blockchain implements AddressValidato
         return true;
     }
 
-    async isAddressValid(address: string): Promise<boolean> {
-        return await isAddressValid(address);
+    isAddressValid(address: string): boolean {
+        return isAddressValid(address);
     }
 }

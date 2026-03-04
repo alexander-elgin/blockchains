@@ -43,8 +43,8 @@ export default class TrxBlockchain extends Blockchain implements
         return await isAddressActive(this.network, address);
     }
 
-    async isAddressValid(address: string): Promise<boolean> {
-        return await isAddressValid(address);
+    isAddressValid(address: string): boolean {
+        return isAddressValid(address);
     }
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
