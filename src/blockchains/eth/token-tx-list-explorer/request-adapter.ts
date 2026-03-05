@@ -1,6 +1,7 @@
 import ExplorerRequestAdapter from '../../../abstract/explorer/request-adapter.js';
 
-import type {ContractInfo} from '../../../abstract/types.js';
+import type { ContractInfo, TxListOptions } from '../../../abstract/types.js';
+import {Sorting} from "../../../abstract/types.js";
 
 export default class EtherscanTokenTxListExplorerRequestAdapter extends ExplorerRequestAdapter {
     private readonly apiKey: string;
@@ -10,7 +11,7 @@ export default class EtherscanTokenTxListExplorerRequestAdapter extends Explorer
         this.apiKey = apiKey;
     }
 
-    getData(address: string, contract: ContractInfo) {
+    getData(address: string, contract: ContractInfo, options: TxListOptions) {
         return {
             chainid: 1,
             module: 'account',
@@ -18,7 +19,7 @@ export default class EtherscanTokenTxListExplorerRequestAdapter extends Explorer
             address: address,
             startblock: 0,
             endblock: 99999999,
-            sort: 'desc',
+            sort: options?.sorting === Sorting.ASC ? 'asc' : 'desc',
             contractaddress: contract.address,
             apikey: this.apiKey,
         };

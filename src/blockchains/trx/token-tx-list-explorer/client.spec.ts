@@ -1,6 +1,7 @@
-import { beforeAll, describe, expect, it, } from '@jest/globals';
+import {beforeAll, describe, expect, it,} from '@jest/globals';
 
 import TxListExplorerClient from '../../../abstract/tx-list-explorer-client.js';
+import {Sorting} from '../../../abstract/types.js';
 import TronGridTokenTxListExplorerRequestAdapter from './request-adapter.js';
 import TronGridTokenTxListExplorerResponseParser from './response-parser.js';
 
@@ -18,7 +19,7 @@ describe.skip('TronGrid Tx List Token Client', () => {
             const txs = await client.getData('TFRFm2xTo4iwZZdnnxUoQSGWG3snt9GdqH', {
                 address: 'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t',
                 type: 'trc20',
-            });
+            }, { sorting: Sorting.ASC });
             console.log(txs);
             expect(true).toBeTruthy();
         });
