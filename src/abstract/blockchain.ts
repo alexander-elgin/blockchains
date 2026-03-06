@@ -16,7 +16,7 @@ export default abstract class Blockchain {
     }
 
     async getMatchedTxs(ignored: Array<string>, targetTx: Tx, contract: ContractInfo): Promise<Array<Tx>> {
-        return getMatchedTxs(ignored, targetTx, await this.txListClient.getData(targetTx.from, contract));
+        return getMatchedTxs(ignored, targetTx, (await this.txListClient.getData(targetTx.from, contract)).items);
     }
 }
 

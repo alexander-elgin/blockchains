@@ -4,6 +4,7 @@ import TxListExplorerClient from '../../../abstract/tx-list-explorer-client.js';
 import {Sorting} from '../../../types.js';
 import EtherscanTokenTxListExplorerRequestAdapter from './request-adapter.js';
 import EtherscanTokenTxListExplorerResponseParser from './response-parser.js';
+import parsePagination from './parse-pagination.js';
 
 describe.skip('Etherscan Token Tx List Client', () => {
     let client: TxListExplorerClient;
@@ -13,7 +14,7 @@ describe.skip('Etherscan Token Tx List Client', () => {
 
         client = new TxListExplorerClient(
             new EtherscanTokenTxListExplorerRequestAdapter('https://api.etherscan.io', API_KEY),
-            new EtherscanTokenTxListExplorerResponseParser());
+            new EtherscanTokenTxListExplorerResponseParser(), parsePagination);
     });
 
     describe('.getTxs', () => {

@@ -4,6 +4,7 @@ import TxListExplorerClient from '../../../abstract/tx-list-explorer-client.js';
 import {Sorting} from '../../../types.js';
 import TronGridTokenTxListExplorerRequestAdapter from './request-adapter.js';
 import TronGridTokenTxListExplorerResponseParser from './response-parser.js';
+import parsePagination from './parse-pagination.js';
 
 describe.skip('TronGrid Tx List Token Client', () => {
     let client: TxListExplorerClient;
@@ -11,7 +12,7 @@ describe.skip('TronGrid Tx List Token Client', () => {
     beforeAll(() => {
         client = new TxListExplorerClient(
             new TronGridTokenTxListExplorerRequestAdapter('https://api.trongrid.io'),
-            new TronGridTokenTxListExplorerResponseParser());
+            new TronGridTokenTxListExplorerResponseParser(), parsePagination);
     });
 
     describe('.getTxs', () => {

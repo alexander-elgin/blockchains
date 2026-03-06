@@ -3,16 +3,18 @@ export type ContractInfo = {
     type: string,
 };
 
-export type TxListOptions = {
-    sorting?: Sorting,
-    pagination: {
-        fingerprint?: string,
-        limit: number,
-        page?: number,
-    }
-};
-
 export enum Sorting {
     ASC = 'ASC',
     DESC = 'DESC',
 }
+
+export type Pagination = {
+    fingerprint?: string,
+    limit: number,
+    page?: number,
+};
+
+export type TxListOptions = {
+    sorting?: Sorting,
+    pagination: Pagination,
+};

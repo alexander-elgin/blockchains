@@ -4,6 +4,7 @@ import Blockchain from '../../abstract/blockchain.js';
 import TxListExplorerClient from '../../abstract/tx-list-explorer-client.js';
 import TronGridTokenTxListExplorerRequestAdapter from './token-tx-list-explorer/request-adapter.js';
 import TronGridTokenTxListExplorerResponseParser from './token-tx-list-explorer/response-parser.js';
+import parsePagination from './token-tx-list-explorer/parse-pagination.js';
 import { createTokenTx, createTx, getSignTxUrl, isAddressActive, isAddressValid, signTx } from './utils/index.js';
 
 import type { AddressValidator, TokenTxCreator, TxCreator, TxRouter, TxSigner } from '../../abstract/blockchain.js';
@@ -21,7 +22,7 @@ export default class TrxBlockchain extends Blockchain implements
 
     constructor(explorerUrl: string) {
         super(new TxListExplorerClient(new TronGridTokenTxListExplorerRequestAdapter(explorerUrl),
-            new TronGridTokenTxListExplorerResponseParser()));
+            new TronGridTokenTxListExplorerResponseParser(), parsePagination));
         this.network = new TronWeb({ fullHost: explorerUrl });
     }
 
