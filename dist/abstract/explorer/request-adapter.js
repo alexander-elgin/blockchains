@@ -1,7 +1,13 @@
+const DEFAULT_PAGINATION_LIMIT = 10;
 export default class ExplorerRequestAdapter {
     baseUrl;
-    constructor(baseUrl) {
+    maxLimit;
+    constructor(baseUrl, maxLimit) {
         this.baseUrl = baseUrl;
+        this.maxLimit = maxLimit;
+    }
+    getAllowedLimit(limit) {
+        return Math.max(1, Math.min(limit ?? DEFAULT_PAGINATION_LIMIT, this.maxLimit));
     }
     getMethod() {
         return 'GET';

@@ -1,0 +1,1 @@
+{"version":3,"file":"parse-pagination.js","sourceRoot":"","sources":["../../../../src/blockchains/trx/token-tx-list-explorer/parse-pagination.ts"],"names":[],"mappings":"AAIA,MAAM,CAAC,OAAO,UAAU,KAAK,CAAE,EAAE,KAAK,EAAc,EAAE,EAAE,IAAI,EAAE,EAAE,WAAW,EAAE,EAAuB;IAChG,OAAO,EAAE,KAAK,EAAE,WAAW,EAAE,CAAC;AAClC,CAAC"}

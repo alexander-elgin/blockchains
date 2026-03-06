@@ -1,11 +1,16 @@
 import ExplorerRequestAdapter from '../../../abstract/explorer/request-adapter.js';
-const MAX_ALLOWED_TXS_NUMBER_PER_REQUEST = 200;
+import { Sorting } from '../../../types.js';
 export default class TronGridTokenTxListExplorerRequestAdapter extends ExplorerRequestAdapter {
-    getData(address, contract) {
+    constructor(baseUrl) {
+        super(baseUrl, 200);
+    }
+    getData(address, contract, options) {
         return {
             contract_address: contract.address,
-            limit: MAX_ALLOWED_TXS_NUMBER_PER_REQUEST,
+            limit: this.getAllowedLimit(options.pagination.limit),
             only_confirmed: true,
+            order_by: `block_timestamp,${options?.sorting === Sorting.ASC ? 'asc' : 'desc'}`,
+            fingerprint: options.pagination.fingerprint ?? '',
         };
     }
     getUri(address, contract) {

@@ -1,0 +1,1 @@
+{"version":3,"file":"parse-pagination.d.ts","sourceRoot":"","sources":["../../../../src/blockchains/eth/token-tx-list-explorer/parse-pagination.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,UAAU,EAAE,MAAM,mBAAmB,CAAC;AAEpD,MAAM,CAAC,OAAO,UAAU,eAAe,CAAE,EAAE,KAAK,EAAE,IAAQ,EAAC,EAAE,UAAU,GAAG,UAAU,CAEnF"}

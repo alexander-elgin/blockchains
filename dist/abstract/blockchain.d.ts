@@ -1,8 +1,10 @@
+import type { BlockchainClient } from './types.js';
 import type Tx from '../tx.js';
-import type { BlockchainClient, ContractInfo } from './types.js';
+import type { ContractInfo } from '../types.js';
 export default abstract class Blockchain {
     protected readonly txListClient: BlockchainClient;
     protected constructor(txListClient: BlockchainClient);
+    getAllowedLimit(limit: number): number;
     getMatchedTxs(ignored: Array<string>, targetTx: Tx, contract: ContractInfo): Promise<Array<Tx>>;
 }
 export interface AddressValidator {

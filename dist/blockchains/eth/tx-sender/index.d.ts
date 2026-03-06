@@ -1,5 +1,5 @@
 import type Tx from '../../../tx.js';
-import type { ContractInfo } from '../../../abstract/types.js';
+import type { ContractInfo } from '../../../types.js';
 export default class EthTxSender {
     private readonly wallet;
     constructor(RPC: string, privateKey: string);

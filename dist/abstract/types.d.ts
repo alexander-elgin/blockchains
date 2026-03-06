@@ -1,9 +1,12 @@
 import type Tx from '../tx.js';
+import type { ContractInfo, Pagination } from '../types.js';
+export type TxListPaginationParser = (pagination: Pagination, res?: any) => Pagination;
+export type BlockchainClientResponse = Promise<{
+    items: Array<Tx>;
+    pagination: Pagination;
+}>;
 export interface BlockchainClient {
-    getData(address: string, contract?: ContractInfo): Promise<Array<Tx>>;
+    getData(address: string, contract?: ContractInfo): BlockchainClientResponse;
+    getAllowedLimit(limit: number): number;
 }
-export type ContractInfo = {
-    address: string;
-    type: string;
-};
 //# sourceMappingURL=types.d.ts.map

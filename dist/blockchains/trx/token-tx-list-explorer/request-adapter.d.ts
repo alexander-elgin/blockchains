@@ -1,10 +1,13 @@
 import ExplorerRequestAdapter from '../../../abstract/explorer/request-adapter.js';
-import type { ContractInfo } from '../../../abstract/types.js';
+import type { ContractInfo, TxListOptions } from '../../../types.js';
 export default class TronGridTokenTxListExplorerRequestAdapter extends ExplorerRequestAdapter {
-    getData(address: string, contract: ContractInfo): {
+    constructor(baseUrl: string);
+    getData(address: string, contract: ContractInfo, options: TxListOptions): {
         contract_address: string;
         limit: number;
         only_confirmed: boolean;
+        order_by: string;
+        fingerprint: string;
     };
     protected getUri(address: string, contract: ContractInfo): string;
 }

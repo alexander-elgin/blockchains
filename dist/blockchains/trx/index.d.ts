@@ -1,6 +1,6 @@
 import Blockchain from '../../abstract/blockchain.js';
 import type { AddressValidator, TokenTxCreator, TxCreator, TxRouter, TxSigner } from '../../abstract/blockchain.js';
-import type { ContractInfo } from '../../abstract/types.js';
+import type { ContractInfo } from '../../types.js';
 import type Tx from '../../tx.js';
 export default class TrxBlockchain extends Blockchain implements AddressValidator, TokenTxCreator, TxCreator, TxRouter, TxSigner {
     private readonly network;
