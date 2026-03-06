@@ -1,7 +1,8 @@
 import { getMatchedTxs } from './utils/index.js';
 
+import type { BlockchainClient } from './types.js';
 import type Tx from '../tx.js';
-import type { BlockchainClient, ContractInfo } from './types.js';
+import type { ContractInfo } from '../types.js';
 
 export default abstract class Blockchain {
     protected readonly txListClient: BlockchainClient;

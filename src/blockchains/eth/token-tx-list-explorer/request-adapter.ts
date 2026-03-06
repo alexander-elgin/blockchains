@@ -1,7 +1,7 @@
 import ExplorerRequestAdapter from '../../../abstract/explorer/request-adapter.js';
 
-import type { ContractInfo, TxListOptions } from '../../../abstract/types.js';
-import {Sorting} from "../../../abstract/types.js";
+import type { ContractInfo, TxListOptions } from '../../../types.js';
+import {Sorting} from "../../../types.js";
 
 export default class EtherscanTokenTxListExplorerRequestAdapter extends ExplorerRequestAdapter {
     private readonly apiKey: string;

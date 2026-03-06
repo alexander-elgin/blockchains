@@ -4,7 +4,8 @@ import type { AxiosResponse } from 'axios';
 import type ExplorerRequestAdapter from './explorer/request-adapter.js';
 import type TxExplorerResponseParser from './explorer/tx-list-response-parser.js';
 import type { TxListExplorerResponse } from './explorer/types.js';
-import type { BlockchainClient, ContractInfo, TxListOptions } from './types.js';
+import type { BlockchainClient } from './types.js';
+import type { ContractInfo, TxListOptions } from '../types.js';
 import type Tx from '../tx.js';
 
 export default class TxListExplorerClient implements BlockchainClient {

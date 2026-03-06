@@ -7,7 +7,7 @@ import TronGridTokenTxListExplorerResponseParser from './token-tx-list-explorer/
 import { createTokenTx, createTx, getSignTxUrl, isAddressActive, isAddressValid, signTx } from './utils/index.js';
 
 import type { AddressValidator, TokenTxCreator, TxCreator, TxRouter, TxSigner } from '../../abstract/blockchain.js';
-import type { ContractInfo } from '../../abstract/types.js';
+import type { ContractInfo } from '../../types.js';
 import type Tx from '../../tx.js';
 
 export default class TrxBlockchain extends Blockchain implements

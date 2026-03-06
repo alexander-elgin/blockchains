@@ -1,6 +1,6 @@
 import type { TronWeb } from 'tronweb';
 
-import type {ContractInfo} from '../../../../abstract/types.js';
+import type {ContractInfo} from '../../../../types.js';
 import type Tx from '../../../../tx.js';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

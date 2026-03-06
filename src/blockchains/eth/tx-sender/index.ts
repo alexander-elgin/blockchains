@@ -1,7 +1,7 @@
 import { ethers } from 'ethers';
 
 import type Tx from '../../../tx.js';
-import type { ContractInfo } from '../../../abstract/types.js';
+import type { ContractInfo } from '../../../types.js';
 
 export default class EthTxSender {
     private readonly wallet: ethers.Wallet;

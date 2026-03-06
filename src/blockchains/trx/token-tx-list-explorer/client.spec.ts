@@ -1,7 +1,7 @@
 import {beforeAll, describe, expect, it,} from '@jest/globals';
 
 import TxListExplorerClient from '../../../abstract/tx-list-explorer-client.js';
-import {Sorting} from '../../../abstract/types.js';
+import {Sorting} from '../../../types.js';
 import TronGridTokenTxListExplorerRequestAdapter from './request-adapter.js';
 import TronGridTokenTxListExplorerResponseParser from './response-parser.js';
 

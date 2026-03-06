@@ -1,7 +1,7 @@
 import {isAddress, getAddress} from 'ethers';
 
 import type Tx from "../../../tx.js";
-import type {ContractInfo} from "../../../abstract/types.js";
+import type {ContractInfo} from "../../../types.js";
 
 export function isAddressValid(address: string): boolean {
     if (!isAddress(address)) {

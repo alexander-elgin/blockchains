@@ -1,5 +1,5 @@
 import type { ExplorerRequestDataField } from './types.js';
-import type { ContractInfo, TxListOptions } from '../types.js';
+import type { ContractInfo, TxListOptions } from '../../types.js';
 
 export default abstract class ExplorerRequestAdapter {
     abstract getData(address?: string, contract?: ContractInfo, options?: TxListOptions):
