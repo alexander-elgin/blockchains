@@ -3,15 +3,18 @@ import { Sorting } from '../../../types.js';
 
 import type { ContractInfo, TxListOptions } from '../../../types.js';
 
-const MAX_ALLOWED_TXS_NUMBER_PER_REQUEST = 200;
-
 export default class TronGridTokenTxListExplorerRequestAdapter extends ExplorerRequestAdapter {
+    constructor(baseUrl: string) {
+        super(baseUrl, 200);
+    }
+
     getData(address: string, contract: ContractInfo, options: TxListOptions) {
         return {
             contract_address: contract.address,
-            limit: MAX_ALLOWED_TXS_NUMBER_PER_REQUEST,
+            limit: this.getAllowedLimit(options.pagination.limit),
             only_confirmed: true,
             order_by: `block_timestamp,${options?.sorting === Sorting.ASC ? 'asc' : 'desc'}`,
+            fingerprint: options.pagination.fingerprint ?? '',
         };
     }
 

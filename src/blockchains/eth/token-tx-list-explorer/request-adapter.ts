@@ -7,7 +7,7 @@ export default class EtherscanTokenTxListExplorerRequestAdapter extends Explorer
     private readonly apiKey: string;
 
     constructor(baseUrl: string, apiKey: string) {
-        super(baseUrl);
+        super(baseUrl, 1000);
         this.apiKey = apiKey;
     }
 
@@ -21,6 +21,8 @@ export default class EtherscanTokenTxListExplorerRequestAdapter extends Explorer
             endblock: 99999999,
             sort: options?.sorting === Sorting.ASC ? 'asc' : 'desc',
             contractaddress: contract.address,
+            offset: this.getAllowedLimit(options.pagination.limit),
+            page: options.pagination.page ?? 1,
             apikey: this.apiKey,
         };
     }

@@ -19,7 +19,7 @@ describe.skip('TronGrid Tx List Token Client', () => {
             const txs = await client.getData('TFRFm2xTo4iwZZdnnxUoQSGWG3snt9GdqH', {
                 address: 'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t',
                 type: 'trc20',
-            }, { sorting: Sorting.ASC });
+            }, { pagination: { limit: client.getAllowedLimit(5) }, sorting: Sorting.ASC });
             console.log(txs);
             expect(true).toBeTruthy();
         });

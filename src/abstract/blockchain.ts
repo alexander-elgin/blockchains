@@ -11,6 +11,10 @@ export default abstract class Blockchain {
         this.txListClient = txListClient;
     }
 
+    getAllowedLimit(limit: number): number {
+        return this.txListClient.getAllowedLimit(limit);
+    }
+
     async getMatchedTxs(ignored: Array<string>, targetTx: Tx, contract: ContractInfo): Promise<Array<Tx>> {
         return getMatchedTxs(ignored, targetTx, await this.txListClient.getData(targetTx.from, contract));
     }

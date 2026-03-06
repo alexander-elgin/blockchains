@@ -31,4 +31,8 @@ export default class TxListExplorerClient implements BlockchainClient {
         const { data } = await this.fetch(address, contract, options);
         return this.parser.parse(<TxListExplorerResponse>data);
     }
+
+    getAllowedLimit(limit: number): number {
+        return this.requestAdapter.getAllowedLimit(limit);
+    }
 }
