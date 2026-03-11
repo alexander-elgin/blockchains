@@ -1,6 +1,6 @@
 import { getMatchedTxs } from './utils/index.js';
 
-import type { BlockchainClient } from './types.js';
+import type { BlockchainClient, BlockchainClientResponse } from './types.js';
 import type Tx from '../tx.js';
 import type { ContractInfo } from '../types.js';
 
@@ -13,6 +13,10 @@ export default abstract class Blockchain {
 
     getAllowedLimit(limit: number): number {
         return this.txListClient.getAllowedLimit(limit);
+    }
+
+    async getTxs(address: string, contract: ContractInfo): BlockchainClientResponse {
+        return await this.txListClient.getData(address, contract);
     }
 
     async getMatchedTxs(ignored: Array<string>, targetTx: Tx, contract: ContractInfo): Promise<Array<Tx>> {
