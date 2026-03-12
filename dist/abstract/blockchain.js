@@ -7,8 +7,8 @@ export default class Blockchain {
     getAllowedLimit(limit) {
         return this.txListClient.getAllowedLimit(limit);
     }
-    async getTxs(address, contract) {
-        return await this.txListClient.getData(address, contract);
+    async getTxs(address, contract, options) {
+        return await this.txListClient.getData(address, contract, options);
     }
     async getMatchedTxs(ignored, targetTx, contract) {
         return getMatchedTxs(ignored, targetTx, (await this.txListClient.getData(targetTx.from, contract)).items);
